@@ -1,0 +1,75 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "layout": {
+            "contentSize": "1200px",
+            "wideSize": "1440px"
+        },
+        "color": {
+            "palette": [
+                {
+                    "slug": "black",
+                    "color": "#1A1A1A",
+                    "name": "Primary Black"
+                },
+                {
+                    "slug": "white",
+                    "color": "#FFFFFF",
+                    "name": "White"
+                },
+                {
+                    "slug": "accent",
+                    "color": "#CCFF00",
+                    "name": "Accent Green"
+                },
+                {
+                    "slug": "navy",
+                    "color": "#002040",
+                    "name": "Secondary Navy"
+                },
+                {
+                    "slug": "gray",
+                    "color": "#f4f6f8",
+                    "name": "Light Gray"
+                },
+                {
+                    "slug": "gray-dark",
+                    "color": "#6b7280",
+                    "name": "Dark Gray"
+                }
+            ],
+            "defaultPalette": false
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Inter\", sans-serif",
+                    "slug": "inter",
+                    "name": "Inter"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core/button": {
+                "color": {
+                    "text": "#002040",
+                    "background": "#CCFF00"
+                },
+                "border": {
+                    "radius": "4px"
+                }
+            }
+        },
+        "elements": {
+            "button": {
+                "color": {
+                    "text": "#002040",
+                    "background": "#CCFF00"
+                }
+            }
+        }
+    }
+}

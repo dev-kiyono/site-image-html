@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx netlify-cli:*)",
+      "Bash(find:*)",
+      "Bash(printf:*)",
+      "Bash(SITE_NAME=\"kiyono-xsens-102345\":*)",
+      "Bash(npx vercel deploy:*)"
+    ]
+  }
+}

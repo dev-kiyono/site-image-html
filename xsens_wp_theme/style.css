@@ -1,0 +1,22 @@
+/*
+Theme Name: Xsens Product Theme
+Theme URI: https://example.com/xsens-theme
+Author: Antigravity
+Author URI: https://example.com
+Description: A custom hybrid WordPress theme for Xsens product page, based on Design 1.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: xsens-theme
+Tags: custom-background, threaded-comments, translation-ready
+*/
+
+/* Reset & Base Styles will be handled by theme.json and Tailwind CSS output */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1A1A1A;
+    background-color: #FFFFFF;
+}

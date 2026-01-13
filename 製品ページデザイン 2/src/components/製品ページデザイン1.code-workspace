@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "製品ページデザイン1",
+			"path": "../../../製品ページデザイン1"
+		},
+		{
+			"name": "製品ページデザイン 2",
+			"path": "../../../製品ページデザイン 2"
+		},
+		{
+			"name": "製品ページデザイン3",
+			"path": "../../../製品ページデザイン3"
+		},
+		{
+			"name": "xsens-design-preview",
+			"path": "../../../xsens-design-preview"
+		},
+		{
+			"name": "xsens_wp_theme",
+			"path": "../../../xsens_wp_theme"
+		},
+		{
+			"name": "製品ページ_pattern1a_完全版と空っぽ版",
+			"path": "../../../製品ページ_pattern1a_完全版と空っぽ版"
+		},
+		{
+			"name": "topページ_pattern1a_完全版と空っぽ版",
+			"path": "../../../topページ_pattern1a_完全版と空っぽ版"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOPページ</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+  <div id="root">
+    <div class="min-h-screen bg-white">
+      <div id="header-container"></div>
+      <div id="hero-container"></div>
+      <div id="clients-container"></div>
+      <div id="about-mocap-container"></div>
+      <div id="news-container"></div>
+      <div id="product-category-container"></div>
+      <div id="brands-container"></div>
+      <div id="strengths-container"></div>
+      <div id="message-container"></div>
+      <div id="case-studies-container"></div>
+      <div id="cta-container"></div>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script>
+    async function loadSection(id, path) {
+      try {
+        const response = await fetch(`${path}?t=${Date.now()}`);
+        if (!response.ok) throw new Error(`Failed to load ${path}`);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    const sections = [
+      { id: 'header-container', path: 'sections/01-header.html' },
+      { id: 'hero-container', path: 'sections/02-hero.html' },
+      { id: 'clients-container', path: 'sections/03-clients.html' },
+      { id: 'about-mocap-container', path: 'sections/04-about-mocap.html' },
+      { id: 'news-container', path: 'sections/05-news.html' },
+      { id: 'product-category-container', path: 'sections/06-product-category.html' },
+      { id: 'brands-container', path: 'sections/07-brands.html' },
+      { id: 'strengths-container', path: 'sections/08-strengths.html' },
+      { id: 'message-container', path: 'sections/09-message.html' },
+      { id: 'case-studies-container', path: 'sections/10-case-studies.html' },
+      { id: 'cta-container', path: 'sections/11-cta.html' },
+      { id: 'footer-container', path: 'sections/12-footer.html' }
+    ];
+
+    Promise.all(sections.map(section => loadSection(section.id, section.path)))
+      .then(() => {
+        console.log('All sections loaded');
+      });
+  </script>
+</body>
+
+</html>
