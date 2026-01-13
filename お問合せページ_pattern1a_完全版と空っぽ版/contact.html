@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 株式会社HELTEC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background-color: #f8f9fa;
+      color: #1a2332;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    .header {
+      background-color: #1a1a1a;
+      border-bottom: 1px solid rgba(204, 255, 0, 0.2);
+    }
+
+    .header-inner {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #ccff00;
+      border-radius: 4px;
+    }
+
+    .logo-text p:first-child {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .logo-text p:last-child {
+      color: #99a1af;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .nav {
+      display: none;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-item span:first-child {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .nav-item span:last-child {
+      color: #99a1af;
+      font-size: 12px;
+    }
+
+    .header-contact-btn {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      height: 56px;
+      background-color: #ccff00;
+      color: #1a1a1a;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .header-contact-btn:hover {
+      background-color: #d4ff3a;
+    }
+
+    .header-contact-btn span:first-child {
+      font-size: 14px;
+    }
+
+    .header-contact-btn span:last-child {
+      font-size: 12px;
+    }
+
+    .mobile-menu-btn {
+      padding: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn svg {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* Left Column */
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Card Base */
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Page Title Card */
+    .page-title-card .subtitle {
+      font-size: 24px;
+      color: #6b7280;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .page-title-card h1 {
+      font-size: 32px;
+      color: #1a2332;
+      margin-bottom: 16px;
+    }
+
+    .accent-bar {
+      height: 4px;
+      width: 64px;
+      background-color: #ccff00;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .page-title-card .description {
+      font-size: 16px;
+      color: #6b7280;
+    }
+
+    /* Promotional Banner */
+    .promo-banner {
+      background-color: #1a2838;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .promo-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.4;
+    }
+
+    .promo-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .promo-content {
+      position: relative;
+      padding: 32px;
+    }
+
+    .promo-badge {
+      display: inline-block;
+      background-color: #ccff00;
+      color: #1a2332;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    .promo-content h2 {
+      font-size: 32px;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .promo-content p {
+      font-size: 16px;
+      color: #d1d5db;
+      max-width: 560px;
+    }
+
+    /* Strengths Card */
+    .strengths-card h2 {
+      font-size: 24px;
+      color: #1a2332;
+      margin-bottom: 24px;
+    }
+
+    .strength-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .strength-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .strength-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: #ccff00;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a2332;
+      font-weight: bold;
+    }
+
+    .strength-content h3 {
+      font-size: 18px;
+      color: #1a2332;
+      margin-bottom: 8px;
+    }
+
+    .strength-content p {
+      font-size: 16px;
+      color: #6b7280;
+    }
+
+    /* Companies Card */
+    .companies-card h2 {
+      font-size: 24px;
+      color: #1a2332;
+      margin-bottom: 24px;
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .company-item {
+      aspect-ratio: 3 / 2;
+      background: linear-gradient(135deg, #f8f9fa, #fff);
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      transition: all 0.2s;
+    }
+
+    .company-item:hover {
+      border-color: #ccff00;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .company-item p {
+      font-size: 14px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* Right Column - Form */
+    .form-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      min-width: 0;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .form-label-text {
+      font-size: 16px;
+      color: #1a2332;
+      font-weight: bold;
+    }
+
+    .required-badge {
+      padding: 2px 8px;
+      background-color: #ef4444;
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      border-radius: 4px;
+    }
+
+    .optional-badge {
+      padding: 2px 8px;
+      background-color: #6b7280;
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      border-radius: 4px;
+    }
+
+    /* Radio & Checkbox */
+    .option-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .option-item input[type="radio"],
+    .option-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #ccff00;
+    }
+
+    .option-item span {
+      font-size: 16px;
+      color: #1a2332;
+    }
+
+    .option-item:hover span {
+      color: #0a1628;
+    }
+
+    /* Text Inputs */
+    .text-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #1a2332;
+      background-color: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: #ccff00;
+      box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.2);
+    }
+
+    .text-input::placeholder {
+      color: #9ca3af;
+    }
+
+    /* Icon Input */
+    .input-with-icon {
+      position: relative;
+    }
+
+    .input-with-icon .icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #9ca3af;
+    }
+
+    .input-with-icon .text-input {
+      padding-left: 44px;
+    }
+
+    /* Textarea */
+    .textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #1a2332;
+      background-color: #fff;
+      resize: none;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .textarea:focus {
+      outline: none;
+      border-color: #ccff00;
+      box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.2);
+    }
+
+    .textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    /* Name Grid */
+    .name-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    /* Help Text */
+    .help-text {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    /* Privacy Checkbox */
+    .privacy-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .privacy-checkbox input {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      accent-color: #ccff00;
+    }
+
+    .privacy-checkbox span {
+      font-size: 16px;
+      color: #1a2332;
+    }
+
+    .privacy-checkbox a {
+      color: #1a2332;
+    }
+
+    .privacy-checkbox a:hover {
+      text-decoration: underline;
+    }
+
+    /* Submit Button */
+    .submit-section {
+      margin-top: 24px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 56px;
+      background-color: #ccff00;
+      color: #1a2332;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #d4ff3a;
+    }
+
+    .ssl-note {
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1a1a1a;
+      color: #fff;
+      border-top: 1px solid rgba(204, 255, 0, 0.2);
+    }
+
+    .footer-inner {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 48px 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #ccff00;
+      border-radius: 4px;
+    }
+
+    .footer-logo-text p:first-child {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .footer-logo-text p:last-child {
+      color: #99a1af;
+      font-size: 12px;
+    }
+
+    .footer-section h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .footer-section address {
+      font-style: normal;
+      color: #99a1af;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer-contact-btn {
+      width: 100%;
+      max-width: 200px;
+      padding: 16px 24px;
+      border: 1px solid rgba(204, 255, 0, 0.3);
+      border-radius: 4px;
+      background-color: #1a1a1a;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-bottom: 16px;
+    }
+
+    .footer-contact-btn:hover {
+      background-color: rgba(204, 255, 0, 0.1);
+    }
+
+    .footer-contact-btn div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-contact-btn span:first-child {
+      font-size: 14px;
+    }
+
+    .footer-contact-btn span:last-child {
+      font-size: 12px;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-contact-info p {
+      color: #99a1af;
+      font-size: 16px;
+    }
+
+    .footer-nav-item h4 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .footer-nav-item p {
+      color: #99a1af;
+      font-size: 12px;
+    }
+
+    .footer-nav-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-social h4 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .footer-social p {
+      color: #99a1af;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      background-color: #002040;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+
+    .social-icon:hover {
+      background-color: #003060;
+    }
+
+    .footer-copyright {
+      padding-top: 24px;
+      border-top: 1px solid rgba(204, 255, 0, 0.2);
+      text-align: center;
+    }
+
+    .footer-copyright p {
+      color: #99a1af;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .companies-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .header-inner {
+        padding: 0 64px;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .header-contact-btn {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .main-content {
+        padding: 48px 64px;
+      }
+
+      .content-grid {
+        grid-template-columns: 55% 40%;
+        gap: 5%;
+      }
+
+      .promo-content {
+        padding: 48px;
+      }
+
+      .promo-content h2 {
+        font-size: 40px;
+      }
+
+      .form-card {
+        position: sticky;
+        top: 32px;
+      }
+
+      .footer-inner {
+        padding: 64px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .main-content {
+        padding: 48px 100px;
+      }
+
+      .header-inner {
+        padding: 0 100px;
+      }
+
+      .footer-inner {
+        padding: 64px 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+          <p>株式会社HELTEC</p>
+          <p>センシング事業部</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item">
+          <span>Product</span>
+          <span>製品情報</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>Event</span>
+          <span>出展情報</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>News</span>
+          <span>お知らせ</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>Company</span>
+          <span>会社概要</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span>Support</span>
+          <span>サポート</span>
+        </a>
+      </nav>
+
+      <button class="header-contact-btn">
+        <span>Contact</span>
+        <span>お問合せ</span>
+      </button>
+
+      <button class="mobile-menu-btn">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-grid">
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Page Title -->
+        <div class="card page-title-card">
+          <p class="subtitle">Contact</p>
+          <h1>お問い合わせ</h1>
+          <div class="accent-bar"></div>
+          <p class="description">フォームよりお気軽にご相談ください。通常2営業日以内に、担当者よりご連絡いたします。</p>
+        </div>
+
+        <!-- Promotional Banner -->
+        <div class="promo-banner">
+          <div class="promo-bg">
+            <img src="https://images.unsplash.com/photo-1540999890631-6fc5eb4ac45a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3Rpb24lMjBjYXB0dXJlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjQ3NzQxMzh8MA&ixlib=rb-4.1.0&q=80&w=1200" alt="background">
+          </div>
+          <div class="promo-content">
+            <div class="promo-badge">世界シェアNo.1 Xsens正規代理店</div>
+            <h2>「動き」を科学し、<br>創造を加速させる。</h2>
+            <p>あらゆる環境で、高精度なモーションデータを。<br>HELTECは、あなたのプロジェクトを成功に導く技術パートナーです。</p>
+          </div>
+        </div>
+
+        <!-- Strengths Card -->
+        <div class="card strengths-card">
+          <h2>当社の強み</h2>
+          <div class="strength-items">
+            <div class="strength-item">
+              <div class="strength-number">01</div>
+              <div class="strength-content">
+                <h3>専門知識と豊富な実績</h3>
+                <p>モーションキャプチャー分野で10年以上の経験を持ち、スポーツ、医療、エンターテイメントなど幅広い分野での導入実績があります。</p>
+              </div>
+            </div>
+            <div class="strength-item">
+              <div class="strength-number">02</div>
+              <div class="strength-content">
+                <h3>手厚いサポート体制</h3>
+                <p>導入前のデモから導入後のトレーニング、技術サポートまで、専門スタッフが一貫してサポートいたします。</p>
+              </div>
+            </div>
+            <div class="strength-item">
+              <div class="strength-number">03</div>
+              <div class="strength-content">
+                <h3>最新技術の提供</h3>
+                <p>XsensやManusなど、世界最高水準のモーションキャプチャーシステムを取り扱い、常に最新の技術をご提供します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Companies Card -->
+        <div class="card companies-card">
+          <h2>導入いただいている企業様</h2>
+          <div class="companies-grid">
+            <div class="company-item"><p>大手製造業A社</p></div>
+            <div class="company-item"><p>スポーツ大学B</p></div>
+            <div class="company-item"><p>医療法人C</p></div>
+            <div class="company-item"><p>研究機関D</p></div>
+            <div class="company-item"><p>エンタメ企業E</p></div>
+            <div class="company-item"><p>自動車メーカーF</p></div>
+            <div class="company-item"><p>大学G</p></div>
+            <div class="company-item"><p>IT企業H</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Form -->
+      <div>
+        <form class="form-card">
+          <!-- お問い合わせ種別 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">お問い合わせ種別</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="option-list">
+              <label class="option-item">
+                <input type="radio" name="inquiryType" value="購入・見積もり">
+                <span>購入・見積もり</span>
+              </label>
+              <label class="option-item">
+                <input type="radio" name="inquiryType" value="デモ依頼">
+                <span>デモ依頼</span>
+              </label>
+              <label class="option-item">
+                <input type="radio" name="inquiryType" value="資料請求">
+                <span>資料請求</span>
+              </label>
+              <label class="option-item">
+                <input type="radio" name="inquiryType" value="その他">
+                <span>その他</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ご検討中の製品 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">ご検討中の製品</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="option-list">
+              <label class="option-item">
+                <input type="checkbox" name="products" value="Xsens">
+                <span>Xsens</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="products" value="Manus">
+                <span>Manus</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="products" value="その他・わからない">
+                <span>その他・わからない</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- お問い合わせ内容 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">お問い合わせ内容</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="option-list">
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="製品の仕様について">
+                <span>製品の仕様について</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="価格・見積もりについて">
+                <span>価格・見積もりについて</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="デモ・トライアルについて">
+                <span>デモ・トライアルについて</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="導入事例について">
+                <span>導入事例について</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="サポート・保守について">
+                <span>サポート・保守について</span>
+              </label>
+              <label class="option-item">
+                <input type="checkbox" name="inquiryContent" value="その他">
+                <span>その他</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- お問い合わせ内容詳細 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">お問い合わせ内容詳細</span>
+              <span class="optional-badge">任意</span>
+            </div>
+            <textarea class="textarea" rows="5" placeholder="（例）屋外での使用について相談したい。レンタルプランがあるか知りたい。"></textarea>
+          </div>
+
+          <!-- 会社名・団体名 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">会社名・団体名</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <input type="text" class="text-input" name="companyName">
+          </div>
+
+          <!-- お名前 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">お名前</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="name-grid">
+              <input type="text" class="text-input" name="lastName" placeholder="姓">
+              <input type="text" class="text-input" name="firstName" placeholder="名">
+            </div>
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">メールアドレス</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="input-with-icon">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <input type="email" class="text-input" name="email">
+            </div>
+            <p class="help-text">半角英数字で入力してください</p>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">電話番号</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <div class="input-with-icon">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <input type="tel" class="text-input" name="phone">
+            </div>
+          </div>
+
+          <!-- プライバシーポリシー -->
+          <div class="form-group">
+            <div class="form-label">
+              <span class="form-label-text">プライバシーポリシー</span>
+              <span class="required-badge">必須</span>
+            </div>
+            <label class="privacy-checkbox">
+              <input type="checkbox" name="privacyAgreed">
+              <span><a href="/privacy">プライバシーポリシー</a>に同意する</span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-section">
+            <button type="submit" class="submit-btn">
+              <span>入力内容を確認する</span>
+            </button>
+            <p class="ssl-note">※SSL通信により情報は暗号化されます</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Column 1 - Logo & Address -->
+        <div class="footer-section">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"></div>
+            <div class="footer-logo-text">
+              <p>株式会社HELTEC</p>
+              <p>センシング事業部</p>
+            </div>
+          </div>
+          <h3>Address</h3>
+          <address>
+            〒135-0047<br>
+            東京都江東区門前仲町19-11<br>
+            Tokyo Monmaka Village 6F
+          </address>
+        </div>
+
+        <!-- Column 2 - Contact -->
+        <div class="footer-section">
+          <button class="footer-contact-btn">
+            <div>
+              <span>Contact</span>
+              <span>お問合せ</span>
+            </div>
+          </button>
+          <div class="footer-contact-info">
+            <p>03-5875-9788</p>
+            <p>sensing@heltec.co.jp</p>
+          </div>
+        </div>
+
+        <!-- Column 3 - Navigation -->
+        <div class="footer-section">
+          <div class="footer-nav-items">
+            <div class="footer-nav-item">
+              <h4>Product</h4>
+              <p>製品情報</p>
+            </div>
+            <div class="footer-nav-item">
+              <h4>Event</h4>
+              <p>出展情報</p>
+            </div>
+            <div class="footer-nav-item">
+              <h4>News</h4>
+              <p>お知らせ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4 - Additional Links & Social -->
+        <div class="footer-section">
+          <div class="footer-nav-items">
+            <div class="footer-nav-item">
+              <h4>Company</h4>
+              <p>会社概要</p>
+            </div>
+            <div class="footer-nav-item">
+              <h4>Support</h4>
+              <p>サポート</p>
+            </div>
+            <div class="footer-nav-item">
+              <h4>Privacy Policy</h4>
+              <p>個人情報保護方針</p>
+            </div>
+            <div class="footer-social">
+              <h4>Follow us</h4>
+              <p>ブログ</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy;2024 HELTEC All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
