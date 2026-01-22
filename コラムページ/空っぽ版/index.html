@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コラムタイトル | 株式会社HELTEC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arimo', 'Noto Sans JP', sans-serif;
+        }
+
+        .header-scrolled {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+        }
+
+        .decoration-primary {
+            text-decoration: underline;
+            text-decoration-color: #CFFF04;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 2px;
+        }
+
+        .active-toc {
+            background-color: #CFFF04 !important;
+            color: #0A1628 !important;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .faq-content {
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1024px) {
+            #mobile-menu.hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <div id="header-container"></div>
+
+    <!-- Main Wrapper -->
+    <div class="relative">
+        <div id="breadcrumb-container"></div>
+        <div id="hero-container"></div>
+
+        <!-- Content Area -->
+        <div class="bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid lg:grid-cols-12 gap-12">
+
+                    <!-- Article Content -->
+                    <article class="lg:col-span-8">
+                        <div id="intro-container"></div>
+                        <div id="overview-container"></div>
+                        <div id="mechanism-container"></div>
+                        <div id="usage-scenes-container"></div>
+                        <div id="gallery-container"></div>
+                        <div id="qa-chat-container"></div>
+                        <div id="mid-cta-container"></div>
+                        <div id="customer-voice-container"></div>
+                        <div id="comparison-table-container"></div>
+                        <div id="faq-container"></div>
+                        <div id="summary-container"></div>
+                        <div id="author-profile-container"></div>
+                        <div id="final-cta-container"></div>
+                        <div id="related-articles-container"></div>
+                    </article>
+
+                    <!-- Sidebar -->
+                    <aside class="hidden lg:block lg:col-span-4">
+                        <div class="sticky top-24 space-y-8">
+                            <!-- TOC -->
+                            <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm">
+                                <h3
+                                    class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6 border-b pb-2 flex items-center gap-2">
+                                    <i data-lucide="list" class="w-4 h-4"></i>目次
+                                </h3>
+                                <nav id="sidebar-toc" class="space-y-1">
+                                    <a href="#section1"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">1.
+                                        概要</a>
+                                    <a href="#section2"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">2.
+                                        仕組み</a>
+                                    <a href="#section3"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">3.
+                                        導入事例</a>
+                                    <a href="#section4"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">4.
+                                        Ｑ＆Ａ</a>
+                                    <a href="#section5"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">5.
+                                        お客様の声</a>
+                                    <a href="#section6"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">6.
+                                        製品比較表</a>
+                                    <a href="#section7"
+                                        class="block py-2 px-3 rounded-lg text-sm text-gray-600 hover:text-[#0A1628] hover:bg-[#CFFF04]/10 transition-all border-l-2 border-transparent hover:border-[#CFFF04]">7.
+                                        ＦＡＱ</a>
+                                </nav>
+                            </div>
+
+                            <!-- Banner Placeholder -->
+                            <div
+                                class="bg-[#0A1628] rounded-xl overflow-hidden text-white shadow-xl group border border-transparent hover:border-[#CFFF04] transition-all">
+                                <div class="bg-gray-800 h-40 relative flex items-center justify-center overflow-hidden">
+                                    <i data-lucide="image" class="w-16 h-16 text-gray-600 absolute"></i>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A1628] to-transparent"></div>
+                                </div>
+                                <div class="p-6">
+                                    <p class="text-[10px] uppercase font-bold text-[#CFFF04] mb-2 tracking-widest">
+                                        Recommended</p>
+                                    <h3 class="text-xl font-bold mb-4">製品名</h3>
+                                    <p class="text-xs text-[#99A1AF] mb-6 leading-relaxed">製品のキャッチコピーが入ります。</p>
+                                    <button
+                                        class="w-full bg-[#CFFF04] text-[#0A1628] py-3 rounded-lg font-bold hover:bg-[#B8E600] transition-colors">製品詳細を見る</button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-container"></div>
+    </div>
+
+    <script>
+        async function loadSection(id, path) {
+            try {
+                const response = await fetch(`${path}?t=${Date.now()}`);
+                if (!response.ok) throw new Error(`Failed to load ${path}`);
+                const html = await response.text();
+                document.getElementById(id).innerHTML = html;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        const sections = [
+            { id: 'header-container', path: 'sections/01-header.html' },
+            { id: 'breadcrumb-container', path: 'sections/02-breadcrumb.html' },
+            { id: 'hero-container', path: 'sections/03-hero.html' },
+            { id: 'intro-container', path: 'sections/04-intro.html' },
+            { id: 'overview-container', path: 'sections/05-overview.html' },
+            { id: 'mechanism-container', path: 'sections/06-mechanism.html' },
+            { id: 'usage-scenes-container', path: 'sections/07-usage-scenes.html' },
+            { id: 'gallery-container', path: 'sections/08-gallery.html' },
+            { id: 'qa-chat-container', path: 'sections/09-qa-chat.html' },
+            { id: 'mid-cta-container', path: 'sections/10-mid-cta.html' },
+            { id: 'customer-voice-container', path: 'sections/11-customer-voice.html' },
+            { id: 'comparison-table-container', path: 'sections/12-comparison-table.html' },
+            { id: 'faq-container', path: 'sections/13-faq.html' },
+            { id: 'summary-container', path: 'sections/14-summary.html' },
+            { id: 'author-profile-container', path: 'sections/15-author-profile.html' },
+            { id: 'final-cta-container', path: 'sections/16-final-cta.html' },
+            { id: 'related-articles-container', path: 'sections/17-related-articles.html' },
+            { id: 'footer-container', path: 'sections/18-footer.html' }
+        ];
+
+        Promise.all(sections.map(section => loadSection(section.id, section.path)))
+            .then(() => {
+                lucide.createIcons();
+                initInteractions();
+            });
+
+        function initInteractions() {
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // FAQ 
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const btn = item.querySelector('button');
+                const content = item.querySelector('.faq-content');
+                const icon = item.querySelector('i');
+                btn.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+                    document.querySelectorAll('.faq-content').forEach(c => c.style.maxHeight = '0px');
+                    document.querySelectorAll('.faq-item i').forEach(i => i.style.transform = '');
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Slideshow
+            const slider = document.getElementById('slideshow-container');
+            const nextBtn = document.getElementById('nextSlide');
+            const prevBtn = document.getElementById('prevSlide');
+            if (slider && nextBtn && prevBtn) {
+                let currentSlide = 0;
+                const slideCount = slider.children.length;
+                const updateSlider = () => {
+                    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                };
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slideCount;
+                    updateSlider();
+                });
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                    updateSlider();
+                });
+            }
+
+            // Scroll Logic
+            const banner = document.getElementById('sticky-banner');
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('#sidebar-toc a');
+
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollPos / docHeight) * 100;
+
+                if (banner) {
+                    if (scrollPercent > 30) {
+                        banner.classList.remove('hidden');
+                        setTimeout(() => {
+                            banner.classList.remove('translate-x-[120%]', 'opacity-0');
+                            banner.classList.add('translate-x-0', 'opacity-100');
+                        }, 10);
+                    } else {
+                        banner.classList.add('translate-x-[120%]', 'opacity-0');
+                        banner.classList.remove('translate-x-0', 'opacity-100');
+                    }
+                }
+
+                let activeId = "";
+                sections.forEach(section => {
+                    const top = section.offsetTop - 150;
+                    if (scrollPos >= top) activeId = section.getAttribute('id');
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active-toc');
+                    if (link.getAttribute('href') === `#${activeId}`) link.classList.add('active-toc');
+                });
+            });
+
+            const closeSticky = document.getElementById('close-sticky');
+            if (closeSticky && banner) {
+                closeSticky.addEventListener('click', () => {
+                    banner.style.display = 'none';
+                });
+            }
+
+            tocLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

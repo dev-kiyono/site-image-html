@@ -1,0 +1,61 @@
+<header id="main-header" class="sticky top-0 z-50 bg-[#0A1628] border-b border-[#CFFF04]/20">
+    <div class="max-w-[1440px] mx-auto px-8 lg:px-[158.5px]">
+        <div class="flex items-center justify-between h-[70.74px]">
+            <!-- Logo -->
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-[#CFFF04] rounded-[4px]"></div>
+                <div class="flex flex-col">
+                    <p class="text-white text-[14px] font-bold leading-tight">株式会社HELTEC</p>
+                    <p class="text-[#99A1AF] text-[12px] leading-tight">センシング事業部</p>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <div class="flex items-center gap-8 mr-8">
+                    <a href="#" class="text-center group">
+                        <div class="text-white text-[14px] group-hover:underline">Product</div>
+                        <div class="text-[#99A1AF] text-[12px]">製品情報</div>
+                    </a>
+                    <a href="#" class="text-center group">
+                        <div class="text-white text-[14px] group-hover:underline">Event</div>
+                        <div class="text-[#99A1AF] text-[12px]">出展情報</div>
+                    </a>
+                    <a href="#" class="text-center group">
+                        <div class="text-white text-[14px] group-hover:underline">News</div>
+                        <div class="text-[#99A1AF] text-[12px]">お知らせ</div>
+                    </a>
+                    <a href="#" class="text-center group">
+                        <div class="text-white text-[14px] group-hover:underline">Company</div>
+                        <div class="text-[#99A1AF] text-[12px]">会社概要</div>
+                    </a>
+                    <a href="#" class="text-center group">
+                        <div class="text-white text-[14px] group-hover:underline">Support</div>
+                        <div class="text-[#99A1AF] text-[12px]">サポート</div>
+                    </a>
+                </div>
+                <button
+                    class="bg-[#CFFF04] text-[#1a1a1a] px-6 py-2 rounded-[10px] hover:bg-[#d4ff20] transition-colors flex flex-col items-center justify-center h-[56px] min-w-[96px]">
+                    <span class="text-[14px] font-bold">Contact</span>
+                    <span class="text-[12px]">お問合せ</span>
+                </button>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="lg:hidden p-2 text-[#CFFF04]">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden lg:hidden bg-[#0A1628] border-t border-[#CFFF04]/20 absolute top-full left-0 right-0 p-6 space-y-4 shadow-xl">
+        <a href="#" class="block text-white border-b border-white/10 pb-2">Product / 製品情報</a>
+        <a href="#" class="block text-white border-b border-white/10 pb-2">Event / 出展情報</a>
+        <a href="#" class="block text-white border-b border-white/10 pb-2">News / お知らせ</a>
+        <a href="#" class="block text-white border-b border-white/10 pb-2">Company / 会社概要</a>
+        <a href="#" class="block text-white border-b border-white/10 pb-2">Support / サポート</a>
+        <button class="w-full bg-[#CFFF04] text-[#0A1628] py-4 rounded-lg font-bold">Contact / お問合せ</button>
+    </div>
+</header>
